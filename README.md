@@ -1,20 +1,48 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Eddy
 
-# Run and deploy your AI Studio app
+A React chat app with Eddy's personality, powered by Claude via your local Claude Code CLI subscription — no API key required.
 
-This contains everything you need to run your app locally.
+## How it works
 
-View your app in AI Studio: https://ai.studio/apps/2c3105b2-2207-42d4-8a4a-e87b1ce2dba0
+- Frontend: React + Vite (`src/`)
+- Backend: tiny Express server (`server/index.ts`) that calls `@anthropic-ai/claude-agent-sdk`
+- Auth: the Agent SDK talks to the installed `claude` CLI, which uses whichever Claude subscription is logged into `claude` on this machine
 
-## Run Locally
+## Prerequisites
 
-**Prerequisites:**  Node.js
+- Node.js 18+
+- `claude` CLI installed and logged in (`claude` on its own should open an interactive session)
 
+## Run locally (dev)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm install
+npm run dev
+```
+
+This runs the Express server (port 4317) and Vite (port 3000) together; open <http://localhost:3000>. Vite proxies `/api` to the backend.
+
+## Run as an app (production-style)
+
+```bash
+npm start
+```
+
+Builds the frontend and serves everything from the Express server at <http://127.0.0.1:4317>.
+
+## macOS launcher
+
+`~/Applications/Eddy.app` is a tiny AppleScript bundle that:
+
+1. Starts the server if it isn't running (builds the frontend on first run).
+2. Opens the UI in a Chrome app-mode window (falls back to the default browser).
+
+Launch it from Spotlight, Launchpad, or Finder like any app. Logs: `/tmp/eddy-server.log`.
+
+To rebuild the launcher after moving the project:
+
+```bash
+osacompile -o ~/Applications/Eddy.app scripts/eddy-launcher.applescript
+```
+
+(edit the path in `scripts/launch-eddy.sh` first if the project moves).

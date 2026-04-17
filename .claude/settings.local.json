@@ -6,7 +6,24 @@
       "Bash(git --version)",
       "Bash(git init:*)",
       "Bash(git remote:*)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(npm uninstall *)",
+      "Bash(npm install *)",
+      "Bash(npm cache *)",
+      "Bash(npm run *)",
+      "Bash(chmod +x /Users/rebeccabrown/Documents/Projects_A/eddy-ai/scripts/launch-eddy.sh)",
+      "Bash(mkdir -p ~/Applications)",
+      "Bash(rm -rf ~/Applications/Eddy.app)",
+      "Bash(osacompile -o ~/Applications/Eddy.app /dev/stdin)",
+      "Read(//Users/rebeccabrown/Applications/**)",
+      "Bash(cat)",
+      "Bash(osacompile -o ~/Applications/Eddy.app /tmp/eddy-launcher.applescript)",
+      "Bash(lsof -i:4317)",
+      "Bash(curl -s http://127.0.0.1:4317/api/health)",
+      "Bash(curl -s http://127.0.0.1:4317/)",
+      "Bash(curl -s -X POST http://127.0.0.1:4317/api/chat -H \"Content-Type: application/json\" -d '{\"messages\":[{\"role\":\"user\",\"content\":\"In one witty sentence, confirm youre Eddy.\"}]}' --max-time 60)",
+      "Bash(lsof -ti:4317)",
+      "Bash(xargs -r kill)"
     ]
   }
 }

@@ -4,7 +4,7 @@ import { Send, User, Sparkles, Terminal, Info, X, Mic, MicOff, Volume2, VolumeX 
 import ReactMarkdown from "react-markdown";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { chatWithEddy, type Message } from "./services/geminiService";
+import { chatWithEddy, type Message } from "./services/claudeService";
 import EddyAvatar from "./components/EddyAvatar";
 
 function cn(...inputs: ClassValue[]) {
