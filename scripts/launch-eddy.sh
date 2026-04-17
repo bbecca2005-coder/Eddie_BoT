@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # Launcher for Eddy — starts the local server (if needed) and opens the UI.
+# Self-locating: PROJECT_DIR is derived from this script's own path, so moving
+# the project doesn't break the launcher as long as this script moves with it.
 set -u
 
-PROJECT_DIR="/Users/rebeccabrown/Documents/Projects_A/eddy-ai"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 PORT="${EDDY_PORT:-4317}"
 URL="http://127.0.0.1:${PORT}"
 
