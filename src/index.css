@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Markdown Styles */
+.prose pre {
+  @apply bg-black/40 border border-white/10 rounded-lg p-4 font-mono text-xs;
+}
+
+.prose code {
+  @apply text-cyan-400 font-mono text-xs bg-cyan-500/10 px-1 rounded;
+}
+
+.prose p {
+  @apply mb-4 last:mb-0;
+}

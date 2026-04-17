@@ -1,0 +1,5 @@
+{
+  "name": "Eddy AI",
+  "description": "A sarcastic, witty, and overconfident AI assistant inspired by Eddy from Lab Rats.",
+  "requestFramePermissions": ["microphone"]
+}
